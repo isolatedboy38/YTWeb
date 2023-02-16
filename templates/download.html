@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+
+<div class="container">
+
+      <div class="row">
+        <div class="heading-text">
+            <h5>Title: {{url.title}}</h5>
+        </div>
+
+        <div class="col-md-6 mt-4">
+            <div class="img">
+                <img class="center" src="{{url.thumbnail_url}}" alt="" >
+            </div>
+        </div>
+
+        <div class="col-md-6 mt-4">
+            <div class="option-select">
+                <form action="{{url_for('download')}}" method="POST">
+                 <select class="form-select" name="itag">
+                     {% for i in url.streams.filter(progressive=True) %}
+                         <option value="{{i.itag}}">{{i.resolution}}</option>
+                     {% endfor %}
+                 </select>
+                 <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary">Download</button>
+                  </div>
+                </form>
+             </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}

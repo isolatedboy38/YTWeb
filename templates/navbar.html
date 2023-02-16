@@ -1,0 +1,14 @@
+{% block navbar %}
+
+<div class="custome-navbar">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{url_for('home')}}">
+            <img src="{{url_for('static', filename='YTDownloader.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
+            YT Video Downloader
+          </a>
+    </nav>
+  </header>
+</div>
+
+{% endblock navbar %}

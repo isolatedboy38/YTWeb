@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- <form method="post">
+    <input type="text" placeholder="Enter the url" name="url">
+    <button type="submit">Convert</button>
+</form> -->
+   
+<div class="container">
+    <div class="heading-text text-center">
+        <h1 class="m-5">Download All YouTube Videos, Shorts, Live etc.</h1>
+    </div>
+        
+    <form method="POST">
+            <div class="form-group">
+              <input type="url" class="form-control" aria-describedby="url" placeholder="Enter URL" name="url" autofocus required>
+            </div>
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary">Download</button>
+              </div>
+        </form>
+</div>
+
+{% endblock content %}
